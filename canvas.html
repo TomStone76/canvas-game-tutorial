@@ -23,10 +23,12 @@
 <body onload="startGame()">
     <script>
 
+        //initial variables
         var myGamePiece;
         var myObstacles = [];
         var myScore;
 
+        //function to be executed when page loads
         function startGame() {
             myGamePiece = new component(30, 30, "red", 10, 120);
             myGamePiece.gravity = 0.05;
@@ -34,6 +36,7 @@
             myGameArea.start();
         }
 
+        //define canvas element
         var myGameArea = {
             canvas: document.createElement("canvas"),
             start: function () {
@@ -49,6 +52,7 @@
             }
         }
 
+        //define 
         function component(width, height, color, x, y, type) {
             this.type = type,
                 this.score = 0,
@@ -138,6 +142,7 @@
             return false;
         }
 
+        //function bound to onmouse events in accelerate button
         function accelerate(n) {
             myGamePiece.gravity = n;
         }
